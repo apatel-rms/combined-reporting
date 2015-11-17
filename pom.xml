@@ -14,5 +14,52 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>slf4j-log4j12</artifactId>
+    	<version>1.7.12</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-api</artifactId>
+    	<version>2.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-core</artifactId>
+    	<version>2.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j-slf4j-impl</artifactId>
+    	<version>2.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.owasp</groupId>
+    	<artifactId>security-logging</artifactId>
+    	<version>1.0.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.rms</groupId>
+    	<artifactId>ral-jdbc</artifactId>
+    	<version>0.7.4-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.mockito</groupId>
+    	<artifactId>mockito-all</artifactId>
+    	<version>1.9.5</version>
+    </dependency>
   </dependencies>
+      <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>rae-third-party-libs</name>
+            <url>http://hwd1-artifact-04.lab.rmsonecloud.net:8081/artifactory/rae-third-party-libs</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>rae-release-snapshot</name>
+            <url>http://hwd1-artifact-04.lab.rmsonecloud.net:8081/artifactory/rae-third-party-libs</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
