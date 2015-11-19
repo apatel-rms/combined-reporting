@@ -6,12 +6,20 @@ import org.apache.commons.lang3.NotImplementedException;
 
 public class RALQueryBuilder {
 	
-	public String getRiskItem(String riskItemId){
+	public static String getRiskItem(String riskItemId){
 		return String.format("SELECT riskItem from vRiskItem WHERE id = %s", riskItemId);
 	}
 	
-	public String getRiskItemFromExternalId(String externalRiskItemId){
+	public static String getRiskItemFromExternalId(String externalRiskItemId){
 		return String.format("SELECT riskItem FROM vRiskItem WHERE riskItem.externalID = '%s'", externalRiskItemId);
+	}
+	
+	public static String getRiskItemsFromCountry(String countryCode){
+		return String.format("SELECT vportfoliocontractexposureindex.riskpositionid as RiskID, vportfoliocontractexposureindex.riskitemid as RiskItemID, vaddress.address.countrycode " +
+				"FROM vportfoliocontractexposureindex " +
+				"INNER JOIN vriskitem on vportfoliocontractexposureindex.riskitemid = vriskitem.id " +
+				"INNER JOIN vaddress on vportfoliocontractexposureindex.addressid = vaddress.id " +
+				"WHERE vaddress.address.countrycode = '%s'", countryCode);
 	}
 	
 	public String getSubPortfolioOfExposures(){

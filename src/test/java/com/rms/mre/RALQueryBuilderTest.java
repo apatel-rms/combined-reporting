@@ -1,31 +1,29 @@
 package com.rms.mre;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
 import org.junit.Test;
 
 public class RALQueryBuilderTest {
 
-	private RALQueryBuilder builder;
-	
-	@Before
-	public void setup(){
-		this.builder = new RALQueryBuilder();
-	}
-	
 	@Test
 	public void testGetRiskItem() {
 		String expectedQuery = "SELECT riskItem FROM vRiskItem WHERE id = 10000012154";
-		String query = this.builder.getRiskItem("10000012154");
+		String query = RALQueryBuilder.getRiskItem("10000012154");
 		assertTrue(query.equalsIgnoreCase(expectedQuery));
 	}
 
 	@Test
 	public void testGetRiskItemFromExternalId() {
 		String expectedQuery = "SELECT riskItem FROM vRiskItem WHERE riskItem.externalId = '48102300'";
-		String query = this.builder.getRiskItemFromExternalId("48102300");
+		String query = RALQueryBuilder.getRiskItemFromExternalId("48102300");
 		assertTrue(query.equalsIgnoreCase(expectedQuery));
+	}
+	
+	@Test
+	public void testGetRiskItemsFromCountry(){
+		String expectedQuery = "SELECT vportfoliocontractexposureindex.riskpositionid as RiskID, vportfoliocontractexposureindex.riskitemid as RiskItemID, vaddress.address.countrycode FROM vportfoliocontractexposureindex INNER JOIN vriskitem on vportfoliocontractexposureindex.riskitemid = vriskitem.id INNER JOIN vaddress on vportfoliocontractexposureindex.addressid = vaddress.id WHERE vaddress.address.countrycode = 'GB'";
+		String query = RALQueryBuilder.getRiskItemsFromCountry("GB");
+		assertTrue(String.format("Expected:%s\nActual:%s", expectedQuery, query), query.equalsIgnoreCase(expectedQuery));
 	}
 
 	@Test
