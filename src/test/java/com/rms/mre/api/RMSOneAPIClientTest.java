@@ -1,15 +1,14 @@
 package com.rms.mre.api;
 
-import static org.junit.Assert.*;
+import com.rms.mre.api.types.Activity;
+import com.rms.mre.api.types.Token;
+import org.apache.http.client.ClientProtocolException;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import org.apache.http.client.ClientProtocolException;
-import org.junit.Test;
-
-import com.rms.mre.api.types.Activity;
-import com.rms.mre.api.types.Token;
+import static org.junit.Assert.*;
 
 public class RMSOneAPIClientTest {
 

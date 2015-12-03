@@ -1,8 +1,8 @@
 package com.rms.mre;
 
-import java.util.List;
-
 import org.apache.commons.lang3.NotImplementedException;
+
+import java.util.List;
 
 public class RALQueryBuilder {
 	

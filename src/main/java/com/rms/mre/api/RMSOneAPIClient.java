@@ -1,11 +1,10 @@
 package com.rms.mre.api;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.rms.mre.api.types.Activities;
+import com.rms.mre.api.types.Activity;
+import com.rms.mre.api.types.Token;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -20,11 +19,11 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.rms.mre.api.types.Activities;
-import com.rms.mre.api.types.Activity;
-import com.rms.mre.api.types.Token;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RMSOneAPIClient {
 	

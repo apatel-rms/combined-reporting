@@ -1,13 +1,13 @@
 package com.rms.mre;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+import org.mockito.Mock;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.mockito.*;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class RALClientTest {
 
